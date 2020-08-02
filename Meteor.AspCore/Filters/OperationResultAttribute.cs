@@ -1,0 +1,76 @@
+using System;
+using System.Linq;
+using Meteor.Utils;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Serilog;
+
+namespace Meteor.AspCore.Filters
+{
+    public sealed class OperationResultAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuted(ActionExecutedContext context)
+        {
+            if (context.Filters.OfType<IgnoreOperationResultAttribute>().Any())
+                return;
+            
+            if (context.Exception != null)
+            {
+                context.Result = GetResultFromException(context.Exception);
+                Log.Error(context.Exception, "action exception");
+                context.ExceptionHandled = true;
+            }
+            else
+            {
+                context.Result = GetResultFromActionResult(context.Result);
+            }
+        }
+
+        private static IActionResult GetResultFromException(Exception exception)
+        {
+            var error = exception is Error err ? err : Errors.InternalError(exception.Message, exception);
+            return GetErrorResult(new OperationResult(false, error));
+        }
+
+        private static IActionResult GetResultFromActionResult(IActionResult actionResult)
+        {
+            switch (actionResult)
+            {
+                case StatusCodeResult result:
+                    return GetResultFromCondition(IsSuccessful(result.StatusCode));
+                case ObjectResult result:
+                    return GetResultFromObjectResult(result);
+                case EmptyResult _:
+                    return GetResultFromCondition(true);
+                default:
+                    return actionResult;
+            }
+        }
+
+        private static IActionResult GetResultFromObjectResult(ObjectResult result)
+        {
+            return result.Value is OperationResult oRes
+                ? GetResultFromCondition(oRes.Success, oRes, oRes)
+                : GetSuccessResult(new OperationResult<object>(IsSuccessful(result), result.Value));
+        }
+
+        private static IActionResult GetResultFromCondition(bool success, OperationResult successValue,
+            OperationResult errorValue) =>
+            success ? GetSuccessResult(successValue) : GetErrorResult(errorValue);
+
+        private static IActionResult GetResultFromCondition(bool success) =>
+            GetResultFromCondition(success, new OperationResult(true), new OperationResult(false));
+        
+        private static IActionResult GetSuccessResult(OperationResult result) =>
+            new OkObjectResult(result);
+        
+        private static IActionResult GetErrorResult(OperationResult result) =>
+            new ConflictObjectResult(result);
+
+        private static bool IsSuccessful(IStatusCodeActionResult result) =>
+            result.StatusCode == null || IsSuccessful(result.StatusCode.Value);
+
+        private static bool IsSuccessful(int statusCode) => statusCode >= 200 && statusCode <= 299;
+    }
+}
