@@ -2,11 +2,12 @@ using System.Security.Claims;
 using System.Text.Json.Serialization;
 using Meteor.AspCore.Utils;
 using Meteor.Database;
-using Meteor.Message.Db;
+using Meteor.Database.SqlDialect;
+using Meteor.Operation.Db;
 
-namespace Meteor.AspCore.Message.Db
+namespace Meteor.AspCore.Operation.Db
 {
-    public abstract class DbQueryPageByUserAsync<T> : DbQueryPageAsync<T>, INeedUser
+    public abstract class DbOperationByUserAsync<TInput, TOutput> : DbOperationAsync<TInput, TOutput>, INeedUser
     {
         private ClaimsPrincipal _byUser;
 
@@ -23,11 +24,7 @@ namespace Meteor.AspCore.Message.Db
 
         public long ByUserId { get; private set; }
 
-        protected DbQueryPageByUserAsync(LazyDbConnection lazyDbConnection) : base(lazyDbConnection)
-        {
-        }
-
-        protected DbQueryPageByUserAsync() : this(null)
+        protected DbOperationByUserAsync(LazyDbConnection lazyDbConnection, ISqlFactory sqlFactory) : base(lazyDbConnection, sqlFactory)
         {
         }
     }

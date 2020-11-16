@@ -6,7 +6,7 @@ namespace Meteor.AspCore.ModelBinders
 {
     public class ModelBinderProvider : IModelBinderProvider
     {
-        private static readonly LocalDateModelBinder LocalDateModelBinder = new LocalDateModelBinder();
+        private static readonly LocalDateModelBinder LocalDateModelBinder = new();
 
         public IModelBinder GetBinder(ModelBinderProviderContext context)
         {

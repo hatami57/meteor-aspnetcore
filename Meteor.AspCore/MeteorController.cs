@@ -6,11 +6,11 @@ namespace Meteor.AspCore
 {
     [ApiController]
     [OperationResult]
-    public class BaseController : ControllerBase
+    public class MeteorController : ControllerBase
     {
         protected readonly IDiagnosticContext LogContext;
         
-        public BaseController(IDiagnosticContext diagnosticContext)
+        public MeteorController(IDiagnosticContext diagnosticContext)
         {
             LogContext = diagnosticContext;
         }

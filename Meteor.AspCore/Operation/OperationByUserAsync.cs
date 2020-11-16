@@ -1,11 +1,11 @@
 ﻿using System.Security.Claims;
 using System.Text.Json.Serialization;
 using Meteor.AspCore.Utils;
-using Meteor.Message;
+using Meteor.Operation;
 
-namespace Meteor.AspCore.Message
+namespace Meteor.AspCore.Operation
 {
-    public abstract class MessageByUserAsync<T> : MessageAsync<T>, INeedUser
+    public abstract class OperationByUserAsync<TInput, TOutput> : OperationAsync<TInput, TOutput>, INeedUser
     {
         private ClaimsPrincipal _byUser;
 

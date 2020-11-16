@@ -1,7 +1,7 @@
 using System.Security.Claims;
 using System.Text.Json.Serialization;
 
-namespace Meteor.AspCore.Message
+namespace Meteor.AspCore.Operation
 {
     public interface INeedUser
     {

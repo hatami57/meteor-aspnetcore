@@ -35,17 +35,13 @@ namespace Meteor.AspCore.Filters
 
         private static IActionResult GetResultFromActionResult(IActionResult actionResult)
         {
-            switch (actionResult)
+            return actionResult switch
             {
-                case StatusCodeResult result:
-                    return GetResultFromCondition(IsSuccessful(result.StatusCode));
-                case ObjectResult result:
-                    return GetResultFromObjectResult(result);
-                case EmptyResult _:
-                    return GetResultFromCondition(true);
-                default:
-                    return actionResult;
-            }
+                StatusCodeResult result => GetResultFromCondition(IsSuccessful(result.StatusCode)),
+                ObjectResult result => GetResultFromObjectResult(result),
+                EmptyResult _ => GetResultFromCondition(true),
+                _ => actionResult
+            };
         }
 
         private static IActionResult GetResultFromObjectResult(ObjectResult result)
