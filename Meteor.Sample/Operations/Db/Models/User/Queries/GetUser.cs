@@ -6,7 +6,7 @@ namespace Meteor.Sample.Operations.Db.Models.User.Queries
 {
     public class GetUser : DbDefaultSelectAsync<int, User>
     {
-        public GetUser(LazyDbConnection lazyDbConnection, ISqlFactory sqlFactory) : base(lazyDbConnection, sqlFactory, "user")
+        public GetUser() : base("user")
         {
         }
     }

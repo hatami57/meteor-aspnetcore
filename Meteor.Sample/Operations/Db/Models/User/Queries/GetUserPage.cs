@@ -8,7 +8,7 @@ namespace Meteor.Sample.Operations.Db.Models.User.Queries
 {
     public class GetUserPage : DbDefaultQueryPageAsync<User>
     {
-        public GetUserPage(LazyDbConnection lazyDbConnection, ISqlFactory sqlFactory) : base(lazyDbConnection, sqlFactory, "user")
+        public GetUserPage() : base("user")
         {
         }
     }

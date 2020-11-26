@@ -11,14 +11,7 @@ namespace Meteor.Sample.Operations.Db.Models.User.Commands
 {
     public class AddUser : DbOperationAsync<AddUserInDto, int>, ILogInsert
     {
-        private readonly OperationFactory _operationFactory;
-        
         public LogDetails LogDetails { get; private set; }
-
-        public AddUser(LazyDbConnection lazyDbConnection, ISqlFactory sqlFactory, OperationFactory operationFactory) : base(lazyDbConnection, sqlFactory)
-        {
-            _operationFactory = operationFactory;
-        }
 
         protected override async Task ExecutionAsync()
         {

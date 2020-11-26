@@ -8,10 +8,6 @@ namespace Meteor.Sample.Operations.Db.Models.User.Commands
 {
     public class UpdateUser : DbOperationAsync<UpdateUserInDto, bool>
     {
-        public UpdateUser(LazyDbConnection lazyDbConnection, ISqlFactory sqlFactory) : base(lazyDbConnection, sqlFactory)
-        {
-        }
-
         protected override async Task ExecutionAsync()
         {
             Output = await NewSql(sql => sql.UpdateThisId("user", "first_name=@FirstName, last_name=@LastName, username=@Username"))

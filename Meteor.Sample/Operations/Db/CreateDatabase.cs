@@ -8,10 +8,6 @@ namespace Meteor.Sample.Operations.Db
 {
     public class CreateDatabase : DbOperationAsync
     {
-        public CreateDatabase(LazyDbConnection lazyDbConnection, ISqlFactory sqlFactory) : base(lazyDbConnection, sqlFactory)
-        {
-        }
-
         protected override Task ExecutionAsync()
         {
             const string sqlText = @"

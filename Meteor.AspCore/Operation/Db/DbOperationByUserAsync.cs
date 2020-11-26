@@ -23,9 +23,5 @@ namespace Meteor.AspCore.Operation.Db
         }
 
         public long ByUserId { get; private set; }
-
-        protected DbOperationByUserAsync(LazyDbConnection lazyDbConnection, ISqlFactory sqlFactory) : base(lazyDbConnection, sqlFactory)
-        {
-        }
     }
 }
