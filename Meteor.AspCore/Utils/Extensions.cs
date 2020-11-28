@@ -43,6 +43,7 @@ namespace Meteor.AspCore.Utils
             mvcBuilder.AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.Converters.Add(new ErrorJsonConverter());
+                options.JsonSerializerOptions.Converters.Add(new LocalTimeJsonConverter());
                 options.JsonSerializerOptions.Converters.Add(new LocalDateJsonConverter());
                 options.JsonSerializerOptions.Converters.Add(new InstantJsonConverter());
                 options.JsonSerializerOptions.Converters.Add(new GeometryPointJsonConverter());
