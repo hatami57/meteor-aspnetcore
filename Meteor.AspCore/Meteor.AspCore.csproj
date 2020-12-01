@@ -3,7 +3,7 @@
     <PropertyGroup>
         <LangVersion>latest</LangVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.9.1</PackageVersion>
+        <PackageVersion>0.11.1</PackageVersion>
         <Title>Meteor AspCore Library</Title>
         <Authors>Majid Hatami</Authors>
         <TargetFramework>net5.0</TargetFramework>
@@ -11,6 +11,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Meteor" Version="0.11.1" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0" />
         <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />

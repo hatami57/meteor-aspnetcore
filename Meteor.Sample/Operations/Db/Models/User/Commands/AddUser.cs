@@ -1,15 +1,12 @@
 ﻿using System.Threading.Tasks;
-using Meteor.Database;
-using Meteor.Database.SqlDialect;
-using Meteor.Operation;
 using Meteor.Operation.Db;
-using Meteor.Sample.Operations.Db.Models.User.Dto;
 using Meteor.Sample.Operations.Logging;
 using Meteor.Sample.Operations.Logging.Types;
 
 namespace Meteor.Sample.Operations.Db.Models.User.Commands
 {
-    public class AddUser : DbOperationAsync<AddUserInDto, int>, ILogInsert
+    [DbOperation("string FirstName; string LastName; string Username;", typeof(int))]
+    public partial class AddUser : ILogInsert
     {
         public LogDetails LogDetails { get; private set; }
 

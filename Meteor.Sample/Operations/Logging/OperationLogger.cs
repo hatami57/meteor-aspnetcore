@@ -9,7 +9,7 @@ using Serilog;
 
 namespace Meteor.Sample.Operations.Logging
 {
-    public class OperationLogger : IOperationLoggerAsync
+    public partial class OperationLogger : IOperationLoggerAsync
     {
         private readonly LazyDbConnection _lazyDbConnection;
 
@@ -20,8 +20,9 @@ namespace Meteor.Sample.Operations.Logging
 
         public Task LogAsync(IOperationAsync operation)
         {
+            //this.GeneratedMethod();
             Log.Information("Log: Operation '{Name}({State})', Input: {@Input}, Output: {@Output}",
-                operation.GetType().Name, operation.State, operation.GetInput(), operation.GetOutput());
+                operation.GetType().Name, operation.State, operation.Input, operation.Output);
 
             if (operation is not ILog op) return Task.CompletedTask;
             
