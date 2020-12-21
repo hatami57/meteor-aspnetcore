@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Meteor.AspCore" Version="0.11.5" />
+      <PackageReference Include="Meteor.AspCore" Version="*" />
       <PackageReference Include="Meteor.Database.Dapper" Version="0.11.6" />
     </ItemGroup>
 
