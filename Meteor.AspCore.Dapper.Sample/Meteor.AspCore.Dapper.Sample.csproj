@@ -12,12 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Meteor.AspCore" Version="0.11.1" />
+    <PackageReference Include="Meteor.AspCore.Dapper" Version="*" />
+    <PackageReference Include="Meteor.Database.Dapper.Sqlite" Version="0.11.5" />
+    <PackageReference Include="Meteor.Logger" Version="0.11.5" />
+    <PackageReference Include="Meteor.SourceGenerator" Version="0.11.5" />
   </ItemGroup>
-
-  <!--  <ItemGroup>-->
-  <!--    <ProjectReference Include="..\Meteor.AspCore\Meteor.AspCore.csproj" />-->
-  <!--  </ItemGroup>-->
-
 
 </Project>

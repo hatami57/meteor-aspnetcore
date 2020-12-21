@@ -1,6 +1,6 @@
-﻿using Meteor.Operation.Db.Default;
+﻿using Meteor.Database.Dapper.Operations.Db.Default;
 
-namespace Meteor.Sample.Operations.Db.Models.User
+namespace Meteor.AspCore.Dapper.Sample.Operations.Db.Models.User
 {
     public record User : IDbModel<int>
     {

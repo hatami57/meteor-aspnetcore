@@ -1,13 +1,12 @@
 using System;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Meteor.Database;
-using Meteor.Logger;
+using Meteor.AspCore.Dapper.Sample.Operations.Logging.Types;
+using Meteor.Database.Dapper;
 using Meteor.Operation;
-using Meteor.Sample.Operations.Logging.Types;
 using Serilog;
 
-namespace Meteor.Sample.Operations.Logging
+namespace Meteor.AspCore.Dapper.Sample.Operations.Logging
 {
     public partial class OperationLogger : IOperationLoggerAsync
     {

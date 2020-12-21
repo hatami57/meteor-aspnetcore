@@ -1,4 +1,4 @@
-namespace Meteor.Sample.Operations.Logging
+namespace Meteor.AspCore.Dapper.Sample.Operations.Logging
 {
     public record LogDetails
     {

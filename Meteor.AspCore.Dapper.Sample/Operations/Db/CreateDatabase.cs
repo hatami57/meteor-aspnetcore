@@ -1,10 +1,8 @@
 using System.Threading.Tasks;
-using Meteor.Database;
-using Meteor.Database.SqlDialect;
-using Meteor.Operation.Db;
+using Meteor.Database.Dapper.Operations.Db;
 using Serilog;
 
-namespace Meteor.Sample.Operations.Db
+namespace Meteor.AspCore.Dapper.Sample.Operations.Db
 {
     public class CreateDatabase : DbOperationAsync
     {

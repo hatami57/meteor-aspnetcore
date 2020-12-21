@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
+using Meteor.AspCore.Dapper.Sample.Operations.Db.Models.User;
+using Meteor.AspCore.Dapper.Sample.Operations.Db.Models.User.Commands;
+using Meteor.AspCore.Dapper.Sample.Operations.Db.Models.User.Queries;
 using Meteor.AspCore.Filters;
+using Meteor.Database.Dapper.Operations.Db;
+using Meteor.Database.Dapper.Operations.Db.Default;
 using Meteor.Operation;
-using Meteor.Operation.Db;
-using Meteor.Operation.Db.Default;
-using Meteor.Sample.Operations.Db.Models.User;
-using Meteor.Sample.Operations.Db.Models.User.Commands;
-using Meteor.Sample.Operations.Db.Models.User.Queries;
 
-namespace Meteor.Sample.Controllers
+namespace Meteor.AspCore.Dapper.Sample.Controllers
 {
     [ApiController]
     [Route("[controller]")]

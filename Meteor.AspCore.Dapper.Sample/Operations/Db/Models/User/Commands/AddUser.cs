@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
-using Meteor.Operation.Db;
-using Meteor.Sample.Operations.Logging;
-using Meteor.Sample.Operations.Logging.Types;
+using Meteor.AspCore.Dapper.Sample.Operations.Logging;
+using Meteor.AspCore.Dapper.Sample.Operations.Logging.Types;
+using Meteor.Database.Dapper.Operations.Db;
 
-namespace Meteor.Sample.Operations.Db.Models.User.Commands
+namespace Meteor.AspCore.Dapper.Sample.Operations.Db.Models.User.Commands
 {
     [DbOperation("string FirstName; string LastName; string Username;", typeof(int))]
     public partial class AddUser : ILogInsert
