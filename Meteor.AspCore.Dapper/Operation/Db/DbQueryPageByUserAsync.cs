@@ -1,13 +1,12 @@
 using System.Security.Claims;
 using System.Text.Json.Serialization;
+using Meteor.AspCore.Operation;
 using Meteor.AspCore.Utils;
-using Meteor.Database;
-using Meteor.Database.SqlDialect;
-using Meteor.Operation.Db;
+using Meteor.Database.Dapper.Operations.Db;
 
-namespace Meteor.AspCore.Operation.Db
+namespace Meteor.AspCore.Dapper.Operation.Db
 {
-    public abstract class DbOperationByUserAsync<TInput, TOutput> : DbOperationAsync<TInput, TOutput>, INeedUser
+    public abstract class DbQueryPageByUserAsync<TInput, TOutput> : DbQueryPageAsync<TInput, TOutput>, INeedUser where TInput : IQueryPageInput
     {
         private ClaimsPrincipal _byUser;
 

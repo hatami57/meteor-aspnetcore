@@ -1,11 +1,8 @@
-using Meteor.Database;
-using Meteor.Database.SqlDialect;
-using Meteor.Database.SqlDialect.Sqlite;
-using Meteor.Database.Sqlite;
-using Meteor.Operation;
+using Meteor.Database.Dapper;
+using Meteor.Database.Dapper.SqlDialect;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Meteor.AspCore
+namespace Meteor.AspCore.Dapper
 {
     public static class Extensions
     {

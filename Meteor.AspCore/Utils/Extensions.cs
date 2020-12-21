@@ -45,7 +45,6 @@ namespace Meteor.AspCore.Utils
                 options.JsonSerializerOptions.Converters.Add(new ErrorJsonConverter());
                 options.JsonSerializerOptions.Converters.Add(new LocalDateJsonConverter());
                 options.JsonSerializerOptions.Converters.Add(new InstantJsonConverter());
-                options.JsonSerializerOptions.Converters.Add(new GeometryPointJsonConverter());
             });
             return mvcBuilder;
         }
@@ -66,7 +65,7 @@ namespace Meteor.AspCore.Utils
                         ValidateIssuer = validateIssuer,
                         ValidateActor = validateActor,
                         ValidateLifetime = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(EnvVars.Get<string>(EnvVarKeys.JwtKey))),
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(EnvVars.Require<string>(EnvVarKeys.JwtKey))),
                         ValidateIssuerSigningKey = true
                     };
                     options.Events = new JwtBearerEvents()
