@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meteor.AspNetCore", "Meteor.AspNetCore\Meteor.AspNetCore.csproj", "{9808DFEC-0979-4A04-8307-72A156D1BCD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meteor.AspNetCore.Dapper.Sample", "Meteor.AspNetCore.Dapper.Sample\Meteor.AspNetCore.Dapper.Sample.csproj", "{F16FA509-B72B-446E-8671-5C722ECB65A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meteor.AspNetCore.Dapper", "Meteor.AspNetCore.Dapper\Meteor.AspNetCore.Dapper.csproj", "{0C826BF7-F1D8-474E-9CAA-7BDF629ADCF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9808DFEC-0979-4A04-8307-72A156D1BCD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9808DFEC-0979-4A04-8307-72A156D1BCD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9808DFEC-0979-4A04-8307-72A156D1BCD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9808DFEC-0979-4A04-8307-72A156D1BCD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F16FA509-B72B-446E-8671-5C722ECB65A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F16FA509-B72B-446E-8671-5C722ECB65A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F16FA509-B72B-446E-8671-5C722ECB65A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F16FA509-B72B-446E-8671-5C722ECB65A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C826BF7-F1D8-474E-9CAA-7BDF629ADCF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C826BF7-F1D8-474E-9CAA-7BDF629ADCF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C826BF7-F1D8-474E-9CAA-7BDF629ADCF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C826BF7-F1D8-474E-9CAA-7BDF629ADCF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

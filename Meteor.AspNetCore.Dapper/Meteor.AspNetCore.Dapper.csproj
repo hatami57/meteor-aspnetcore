@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageVersion>0.11.8</PackageVersion>
+        <Title>Meteor.AspNetCore.Dapper</Title>
+        <Authors>Majid Hatami</Authors>
+        <RepositoryUrl>https://github.com/hatami57/meteor-aspnetcore</RepositoryUrl>
+        <AssemblyName>Meteor.AspNetCore.Dapper</AssemblyName>
+        <RootNamespace>Meteor.AspNetCore.Dapper</RootNamespace>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Meteor.AspNetCore" Version="*" />
+      <PackageReference Include="Meteor.Database.Dapper" Version="*" />
+    </ItemGroup>
+
+</Project>
